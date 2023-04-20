@@ -1,0 +1,87 @@
+version: '3.6'
+
+services:
+  elasticsearch:
+    container_name: els
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.0-arm64
+    ports:
+      - 9200:9200
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    environment: 
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xmx256m -Xms256m
+      - discovery.type=single-node
+    #restart: always
+    networks:
+      - elastic
+
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:8.7.0-arm64
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_URL=http://localhost:9200
+    #restart: always
+    networks:
+      - elastic
+
+  wiremock:
+    container_name: wiremock
+    image: wiremock/wiremock
+    ports:
+      - 9080:8080
+    volumes:
+      - wiremock-data:/home/wiremock
+    depends_on:
+      - elasticsearch
+    #restart: always
+    networks:
+      - elastic
+
+  sample-dotnet-api:
+    container_name: sample-dotnet-api
+    build:
+      context: ../code-repositories/dotnet-services/sample-api
+      dockerfile: ./Dockerfile
+    ports:
+      - 9081:80
+    depends_on:
+      - elasticsearch
+    #restart: always
+    networks:
+      - elastic
+  ocelot-api-gateway:
+    container_name: ocelot-api-gateway
+    build:
+      context: ../code-repositories/dotnet-services/ocelot-api-gateway
+      dockerfile: ./Dockerfile
+    ports:
+      - 9082:80
+    depends_on:
+      - elasticsearch
+    #restart: always
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    driver: bridge
+
+volumes:
+  elasticsearch-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./elasticsearch-data
+  wiremock-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./wiremock-data
+

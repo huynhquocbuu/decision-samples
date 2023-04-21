@@ -1,0 +1,27 @@
+### HTML/XML/CSS
+Auto-Close Tag by Jun Han - installed
+Color Picker by anseki - installed
+Auto Rename Tag -installed
+### common:
+Code Spell Checker by Street Side Software - installed
+Git History by Don Jayamanne by GitKraken - installed
+Git Lense by GitKraken - installed
+Git Graph by mhutchie
+Docker by Microsoft - installed
+Material Icon Theme by Philipp Kief
+Remote - SSH by Microsoft - installed
+Markdown All in One by Yu Zhang - installed
+Regex Previewer by Christof Marti - installed
+
+###  dotnet extension for VSCode
+C# by Microsoft - installed
+C# Extensions by JosKreativ - installed
+Auto-Using for C# by Fudge - installed
+C# Namespace Autocompletion by Adrian - installed
+NuGet Reverse Package Search by Jess - installed
+.NET Core Add Reference by Adrian Wilczyński - installed
+.NET Core Tools by Jun Han - installed
+
+
+###  Java extension for VSCode
+Extension Pack for Java by Microsoft - installed

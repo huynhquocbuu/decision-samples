@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/sample-api/sample-api.csproj",
+                "${workspaceFolder}/code-repositories/dotnet-services/sample-api/sample-api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/sample-api/sample-api.csproj",
+                "${workspaceFolder}/code-repositories/dotnet-services/sample-api/sample-api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/sample-api/sample-api.csproj"
+                "${workspaceFolder}/code-repositories/dotnet-services/sample-api/sample-api.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

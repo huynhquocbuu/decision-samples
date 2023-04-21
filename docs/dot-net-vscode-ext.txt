@@ -1,6 +1,0 @@
-.NET Core Add Reference v1.0.2
-.NET Core Tools v0.0.4
-Auto-Using for C# v0.7.15
-C# v1.25.4
-C# Extensions v1.7.3
-Code Spell Checker v2.20.4

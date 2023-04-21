@@ -1,3 +1,5 @@
 docker-containers/elasticsearch-data/
 docker-containers/wiremock-data/
 code-repositories/dotnet-services/.vscode/
+code-repositories/dotnet-services/.vs/
+.vscode/

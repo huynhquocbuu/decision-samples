@@ -1,21 +1,22 @@
 {
     "version": "0.2.0",
     "configurations": [
-    //-------Site 1-------------
         {
-            // Use IntelliSense to find out which attributes exist for C# debugging
-            // Use hover for the description of the existing attributes
-            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            "type": "java",
+            "name": "Quarkus Attatch",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5005
+        },
+        {
             "name": ".NET Core Sample Api",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-sample-api",
-            // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/code-repositories/dotnet-services/sample-api/bin/Debug/net6.0/sample-api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/code-repositories/dotnet-services/sample-api",
             "stopAtEntry": false,
-            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
@@ -30,12 +31,11 @@
                 "moduleLoad": false
             }
         },
-    //------Site 2-----------
-        {           
+        {
             "name": ".NET Core Ocelot Api Gateway",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-ocelot-api-gateway",           
+            "preLaunchTask": "build-ocelot-api-gateway",
             "program": "${workspaceFolder}/code-repositories/dotnet-services/ocelot-api-gateway/bin/Debug/net6.0/ocelot-api-gateway.dll",
             "args": [],
             "cwd": "${workspaceFolder}/code-repositories/dotnet-services/ocelot-api-gateway",
@@ -54,13 +54,20 @@
                 "moduleLoad": false
             }
         },
-
-
-
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringApiApplication<spring_api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "sample.services.spring_api.SpringApiApplication",
+            "projectName": "spring_api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

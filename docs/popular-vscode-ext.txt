@@ -25,3 +25,7 @@ NuGet Reverse Package Search by Jess - installed
 
 ###  Java extension for VSCode
 Extension Pack for Java by Microsoft - installed
+Debugger for Java by Microsoft - installed
+Maven for Java by Microsoft - installed
+Spring Boot Extension Pack by vmware
+Quarkus by Redhat
